@@ -15,6 +15,9 @@ https://www.youtube.com/watch?v=dVGQ0BxNxzo
 - framer-motion
 - headless-ui
 
+Live (Vercel):
+https://nextjs-website-investa-tutorial.vercel.app/
+
 
 ```
 npm run dev
