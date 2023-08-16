@@ -9,6 +9,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import { navData } from "@/constants";
 import { Popover } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const MobileNavLink = ({ children, ...props }) => {
   return (
@@ -23,8 +24,26 @@ const MobileNavLink = ({ children, ...props }) => {
 };
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    setIsScrolled(scrollY > 50);
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
   return (
-    <header>
+    <header
+      className={`w-full sticky z-50 top-0 bg-white ${
+        isScrolled && "shadow-xl shadow-blue-100"
+      }`}
+    >
       <nav>
         <Container
           className={"relative z-50 flex justify-between items-center py-8"}

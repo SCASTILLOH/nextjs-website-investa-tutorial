@@ -6,6 +6,7 @@ https://www.youtube.com/watch?v=dVGQ0BxNxzo
 
 <img src="image1.png" alt="nextjs" width="600">
 <img src="image2.png" alt="nextjs" width="600">
+<img src="image3.png" alt="nextjs" width="600">
 
 
 - react
